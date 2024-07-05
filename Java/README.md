@@ -1,6 +1,7 @@
 # Java
+`ReadMe last updated on: 2024/07/06 (YYYY/MM/DD)`
 ## Table of Content
-| Content                                               |
+| Content                                                |
 | ---                                                   |
 | 🏗️[Folder Structure](#content-folderstructure)        |
 | 🗂️[Code Categories](#content-categories)              |
@@ -28,4 +29,4 @@
 - #### Stacks
 - #### Trees
 
-[directorylink-binarysearch]: ./Algorithms/Sorting/Binary%20Search/
+[directorylink-binarysearch]: ./Algorithms/Searching/Sorting/Binary%20Search/

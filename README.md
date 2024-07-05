@@ -1,4 +1,5 @@
 # Code Collection
+`ReadMe last updated on: 2024/07/06 (YYYY/MM/DD)`
 This repository stores programs and general code that I have personally coded
 
 ## Table of Content
