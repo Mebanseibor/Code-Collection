@@ -49,7 +49,8 @@ flowchart
     %%Node difinition
     Start(Start)
     InputArray[/Input Array/]
-    InputKey[/Input Key/]subgraph LoopLeftLTRight [While Left End < Right End]
+    InputKey[/Input Key/]
+    subgraph LoopLeftLTRight [While Left End < Right End]
         direction TB
         VarInitMid[Set a variable to store the middle point of the array or subarray]
         CompareKeyWithMiddle{Compare the key element with<br>the element at the middle}
