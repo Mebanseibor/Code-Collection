@@ -50,20 +50,6 @@ flowchart
     Start(Start)
     InputArray[/Input Array/]
     InputKey[/Input Key/]
-    subgraph LoopLeftLTRight [While Left End < Right End]
-        direction TB
-        VarInitMid[Set a variable to store the middle point of the array or subarray]
-        CompareKeyWithMiddle{Compare the key element with<br>the element at the middle}
-        ReturnMid((Return the middle<br>position/index))
-        SubarrayLeftHalf[Take left half of the<br>array as a subarray]
-        SubarrayRightHalf[Take Right half of the<br>array as a subarray]
-        
-        VarInitMid --> CompareKeyWithMiddle
-        %% Comparision
-            CompareKeyWithMiddle -->|Lesser| SubarrayLeftHalf
-            CompareKeyWithMiddle -->|Equal| ReturnMid
-            CompareKeyWithMiddle -->|Greater| SubarrayRightHalf
-    end
     BinarySearch[Binary  Search]
     End(End)
 
