@@ -20,7 +20,7 @@
 ### Algorithms
 - #### Searching
     - [Binary Search][directorylink-binarysearch]
-    - Linear Search
+    - [Linear Search][directorylink-linearsearch]
 - #### Sorting
 ### Data Structures
 - #### Arrays
@@ -29,4 +29,5 @@
 - #### Stacks
 - #### Trees
 
-[directorylink-binarysearch]: ./Algorithms/Searching/Sorting/Binary%20Search/
+[directorylink-binarysearch]: ./Algorithms/Searching/Binary%20Search/
+[directorylink-linearsearch]: ./Algorithms/Searching/Linear%20Search/

@@ -15,10 +15,10 @@ Binary Search is a searching algorithm that searches a **sorted** array for a ke
 flowchart
     Start((Start))
     VarInitFunc[Set variables to keep track of the<br>left end and right end of the array or subarray]
-    CompareLeftLTRight{if Left end < Right End}
+    CompareLeftLTERight{Is<br>Left end <= Right End}
     ReturnNotFound((Return not found))
     
-    subgraph LoopLeftLTRight [While Left End < Right End]
+    subgraph LoopLeftLTERight [While Left End <= Right End]
         direction TB
         VarInitMid[Set a variable to store the middle point of the array or subarray]
         CompareKeyWithMiddle{Compare the key element with<br>the element at the middle}
@@ -36,11 +36,11 @@ flowchart
     
 
     Start --> VarInitFunc
-    VarInitFunc --> CompareLeftLTRight
-    %% CompareLeftLTRight
-        CompareLeftLTRight -->|Yes| LoopLeftLTRight
-        CompareLeftLTRight -->|No| ReturnNotFound
-    LoopLeftLTRight --> CompareLeftLTRight
+    VarInitFunc --> CompareLeftLTERight
+    %% CompareLeftLTERight
+        CompareLeftLTERight -->|Yes| LoopLeftLTERight
+        CompareLeftLTERight -->|No| ReturnNotFound
+    LoopLeftLTERight --> CompareLeftLTERight
 ```
 
 ### Main Function
@@ -51,10 +51,13 @@ flowchart
     InputArray[/Input Array/]
     InputKey[/Input Key/]
     BinarySearch[Binary  Search]
+    OutputBinarySearchResult[/Output Result of<br>Binary Search/]
     End(End)
 
     Start --> InputArray[/Input a sorted array/]
     InputArray --> InputKey
     InputKey --> BinarySearch[Perform Binary Search]
-    BinarySearch --> End
+    
+    BinarySearch --> OutputBinarySearchResult
+    OutputBinarySearchResult --> End
 ```

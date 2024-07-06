@@ -3,7 +3,7 @@ public class Main{
         int indexLeft = 0;
         int indexRight = array.length-1;
 
-        while(indexLeft<indexRight){
+        while(indexLeft<=indexRight){
             int indexMid = indexLeft+(indexRight-indexLeft)/2;
             int elementMid = array[indexMid];
             
