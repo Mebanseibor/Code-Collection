@@ -9,16 +9,17 @@ This repository stores programs and general code that I have personally coded
 | [Languages](#content-language)                    |
 
 ## <p id="content-language">Languages</p>
+### AutoHotKey
 ### [Java][directorylink-java]
-### [C++][directorylink-cpp]
-### [Lua][directorylink-lua]
-### [HTML][directorylink-html]
-
+### C++T
+### Lua
+### HTML
 
 
 
 
 <!--directory links-->
+[directory-link-autohotkey]: ./AutoHotKey/
 [directorylink-java]: ./Java/README.md
 [directorylink-cpp]: ./Cpp/
 [directorylink-lua]: ./Lua/

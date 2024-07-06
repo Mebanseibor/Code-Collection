@@ -3,9 +3,9 @@ Binary Search is a searching algorithm that searches a **sorted** array for a ke
 
 ## Time and Space Complexity
 - Time Complexity:
-    | Best Time ()  | Average Time ()   | Worst Time(O) |
-    | ---           | ---               | ---           |
-    | 1             | log(n)            | log(n)        |
+    | Best Time (&#937;)    | Average Time (&#952;)     | Worst Time (O)    |
+    | ---                   | ---                       | ---               |
+    | 1                     | log(n)                    | log(n)            |
 - Space Complexity:
     O(n)
 

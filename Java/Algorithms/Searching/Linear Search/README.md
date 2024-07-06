@@ -3,9 +3,9 @@ Linear Search is a searching algorithm that iterates through a linear data struc
 
 ## Time and Space Complexity
 - Time Complexity
-    | Best Time ()  | Average Time ()   | Worst Time(O) |
-    | ---           | ---               | ---           |
-    | O(1)          | O(n)              | O(n)          |
+    | Best Time (&#937;)    | Average Time (&#952;)     | Worst Time (O)    |
+    | ---                   | ---                       | ---               |
+    | 1                     | n                         | n                 |
 - Space Complexity
     O(n)
 
@@ -20,7 +20,7 @@ flowchart
     VarInit[Initialize initial variables]
     CheckPointerWithinOfBounds{Node pointer points  <br />within structure}
     NextNode[Navigate to<br>next node]
-    CompareKeyToNode{Compare Key to Node}
+    CompareKeyToNode{Compare<br />Key to Node}
     ReturnKey((Return<br />index/position<br />of Node))
     ReturnKeyNotFound((Return<br/>Key not Found))
 
@@ -28,13 +28,13 @@ flowchart
     VarInit --> CheckPointerWithinOfBounds
     
     %% CheckPointerWithinOfBounds
-        CheckPointerWithinOfBounds -->|Yes| CompareKeyToNode
-        CheckPointerWithinOfBounds -->|No| ReturnKeyNotFound
+        CheckPointerWithinOfBounds -->|Yes🟢| CompareKeyToNode
+        CheckPointerWithinOfBounds --->|No🔴| ReturnKeyNotFound
 
 
     %% CompareKeyToNode
-        CompareKeyToNode --> |Is same🟢| ReturnKey
-        CompareKeyToNode --> |Is different🔴| NextNode
+        CompareKeyToNode --> |Are same🟢| ReturnKey
+        CompareKeyToNode --> |Are different🔴| NextNode
     
     NextNode --> CheckPointerWithinOfBounds
 ```

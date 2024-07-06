@@ -3,25 +3,24 @@
 ## Table of Content
 | Content                                                |
 | ---                                                   |
-| 🏗️[Folder Structure](#content-folderstructure)        |
 | 🗂️[Code Categories](#content-categories)              |
 
 
 
+## <p id="content-categories">Categories</p>
 
-## <p id="content-folderstructure">Folder Structure</p>
 | Categories                            |
 | ---                                   |
-| Algorithms                            |
+| [Algorithms](#categories-algorithm)   |
 | Data Structures                       |
 
 
-## <p id="content-categories">Categories</p>
-### Algorithms
-- #### Searching
+
+### <p id="categories-algorithm">Algorithms
+- #### Searching algorithms
     - [Binary Search][directorylink-binarysearch]
     - [Linear Search][directorylink-linearsearch]
-- #### Sorting
+- #### Sorting algorithms
 ### Data Structures
 - #### Arrays
 - #### Linked List
