@@ -1,5 +1,5 @@
 # Binary Search
-Binary Search is a searching algorithm that searches a **sorted** array for a key by **comparing the middle element** of an array to the key element, each time taking half of the array, which  potentially contain the key element
+Binary Search is a searching algorithm that searches a **sorted** array for a key by **comparing the middle element** of an array to the key element, sub-divide the array into 2 equal halves and utlize the comparison to dictate which half of the array would be searched for the key element if still not found at the middle of the array
 
 ## Time and Space Complexity
 - Time Complexity:
@@ -38,8 +38,8 @@ flowchart
     Start --> VarInitFunc
     VarInitFunc --> CompareLeftLTERight
     %% CompareLeftLTERight
-        CompareLeftLTERight -->|Yes| LoopLeftLTERight
-        CompareLeftLTERight -->|No| ReturnNotFound
+        CompareLeftLTERight -->|Yes🟢| LoopLeftLTERight
+        CompareLeftLTERight -->|No🔴| ReturnNotFound
     LoopLeftLTERight --> CompareLeftLTERight
 ```
 

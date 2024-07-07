@@ -9,11 +9,11 @@ This repository stores programs and general code that I have personally coded
 | [Languages](#content-language)                    |
 
 ## <p id="content-language">Languages</p>
-### AutoHotKey
-### [Java][directorylink-java]
-### C++T
-### Lua
-### HTML
+- ### AutoHotKey
+- ### [Java][directorylink-java]
+- ### C++
+- ### Lua
+- ### HTML
 
 
 
