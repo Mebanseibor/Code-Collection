@@ -29,4 +29,4 @@ This repository stores programs and general code that I have personally coded
 [directorylink-cpp]: ./Cpp/
 [directorylink-lua]: ./Lua/
 [directorylink-html]: ./HTML/
-[directorylink-java-quicknotes]: 
+[directorylink-java-quicknotes]: ./Java/Quick%20Notes.md
