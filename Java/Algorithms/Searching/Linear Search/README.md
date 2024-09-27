@@ -16,15 +16,34 @@ Linear Search is a searching algorithm that iterates through a linear data struc
 ```mermaid
 flowchart
     %% Node definition
-    Start((Start))
+    Start([Start])
     VarInit[Initialize initial variables]
-    CheckPointerWithinOfBounds{Node pointer points  <br />within structure}
-    NextNode[Navigate to<br>next node]
-    CompareKeyToNode{Compare<br />Key to Node}
-    ReturnKey((Return<br />index/position<br />of Node))
-    ReturnKeyNotFound((Return<br/>Key not Found))
+    CheckPointerWithinOfBounds{"
+        Node pointer points
+        within structure
+    "}
+    NextNode["
+        Navigate to
+        next node
+    "]
+    CompareKeyToNode{"
+        Compare
+        Key to Node
+    "}
+    ReturnKey(["
+        Return
+        index/position
+        of Node
+    "])
+    ReturnKeyNotFound(["
+        Return
+        Key not Found
+    "])
 
-    Start --> VarInit[Initialize variable#40;s#41; that will point to<br>each node of the data structure]
+    Start --> VarInit["
+        Initialize variable(s) that will point to
+        each node of the data structure
+    "]
     VarInit --> CheckPointerWithinOfBounds
     
     %% CheckPointerWithinOfBounds
@@ -42,12 +61,15 @@ flowchart
 ```mermaid
 flowchart
     %% Node definition
-    Start((Start))
-    End((End))
+    Start([Start])
+    End([End])
     InputArray[/Input an array/]
     InputKey[/Input Key/]
     LinearSearch[Linear Search]
-    OutputLinearSearchResult[/Output Result of<br>Linear Search/]
+    OutputLinearSearchResult[/"
+        Output Result of
+        Linear Search
+    "/]
 
     Start --> InputArray
     InputArray --> InputKey

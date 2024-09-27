@@ -13,18 +13,37 @@ Binary Search is a searching algorithm that searches a **sorted** array for a ke
 ### Binary Search Algorithm
 ```mermaid
 flowchart
-    Start((Start))
-    VarInitFunc[Set variables to keep track of the<br>left end and right end of the array or subarray]
-    CompareLeftLTERight{Is<br>Left end <= Right End}
-    ReturnNotFound((Return not found))
+    %% Node Definition
+        Start([Start])
+        VarInitFunc["
+            Set variables to keep track of the
+            left end and right end of the array or subarray
+        "]
+        CompareLeftLTERight{"
+            Is
+            Left end <= Right End
+        "}
+        ReturnNotFound([Return not found])
     
     subgraph LoopLeftLTERight [While Left End <= Right End]
         direction TB
         VarInitMid[Set a variable to store the middle point of the array or subarray]
-        CompareKeyWithMiddle{Compare the key element with<br>the element at the middle}
-        ReturnMid((Return the middle<br>position/index))
-        SubarrayLeftHalf[Take left half of the<br>array as a subarray]
-        SubarrayRightHalf[Take Right half of the<br>array as a subarray]
+        CompareKeyWithMiddle{"
+            Compare the key element with
+            the element at the middle
+        "}
+        ReturnMid(["
+            Return the middle
+            position/index
+        "])
+        SubarrayLeftHalf["
+            Take left half of the
+            array as a subarray
+        "]
+        SubarrayRightHalf["
+            Take Right half of the
+            array as a subarray
+        "]
         
         VarInitMid --> CompareKeyWithMiddle
         %% Comparision
@@ -47,12 +66,15 @@ flowchart
 ```mermaid
 flowchart
     %%Node difinition
-    Start(Start)
-    InputArray[/Input Array/]
-    InputKey[/Input Key/]
-    BinarySearch[Binary  Search]
-    OutputBinarySearchResult[/Output Result of<br>Binary Search/]
-    End(End)
+        Start([Start])
+        InputArray[/Input Array/]
+        InputKey[/Input Key/]
+        BinarySearch[Binary  Search]
+        OutputBinarySearchResult[/"
+            Output Result of
+            Binary Search
+        "/]
+        End([End])
 
     Start --> InputArray[/Input a sorted array/]
     InputArray --> InputKey

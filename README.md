@@ -4,9 +4,10 @@
 This repository stores programs and general code that I have personally coded
 
 ## Table of Content
-| Content                                           |
-| ---                                               |
-| [Languages](#content-language)                    |
+| Content                            |
+| ---------------------------------- |
+| [Languages](#content-language)     |
+| [Quick notes](#content-quicknotes) |
 
 ## <p id="content-language">Languages</p>
 - ### AutoHotKey
@@ -17,6 +18,10 @@ This repository stores programs and general code that I have personally coded
 
 
 
+## <p id='content-quicknotes'>Quick Notes</p>
+- ### [Java][directorylink-java-quicknotes]
+
+
 
 <!--directory links-->
 [directory-link-autohotkey]: ./AutoHotKey/
@@ -24,3 +29,4 @@ This repository stores programs and general code that I have personally coded
 [directorylink-cpp]: ./Cpp/
 [directorylink-lua]: ./Lua/
 [directorylink-html]: ./HTML/
+[directorylink-java-quicknotes]: 
