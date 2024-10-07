@@ -21,7 +21,7 @@
     | ------------------------------ | ------ |
     | nums = [2,7,11,15], target = 9 | [0,1]  |
     | nums = [3,2,4], target = 6     | [1,2]  |
-    | nums = [3,3], target = 6       | [0,1] |
+    | nums = [3,3], target = 6       | [0,1]  |
 
 - #### Auxiliary Goal
     - Construct an algorithm that is less than $O(n^2)$ time complexity
@@ -41,9 +41,9 @@
     - #### Space and Time Complexity
         - ##### Time Complexity
             
-            | Best Time  | Average Time | Worst Time |
-            | ---------- | ------------gi | ---------- |
-            | $\Omega(1)$ | $\Theta()$   | $O(n^2)$ |
+            | Best Time   | Average Time | Worst Time |
+            | ----------- | ------------ | ---------- |
+            | $\Omega(1)$ | $\Theta()$   | $O(n^2)$   |
         
         - ##### Space Complexity
             - $O(1)$
