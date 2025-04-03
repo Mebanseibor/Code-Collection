@@ -12,7 +12,7 @@ This repository stores programs and general code that I have personally coded
 ## <p id="content-language">Languages</p>
 - ### AutoHotKey
 - ### [Java][directorylink-java]
-- ### C++
+- ### [C++][directorylink-cpp]
 - ### Lua
 - ### HTML
 
