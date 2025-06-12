@@ -40,6 +40,16 @@ class BinarySearchTree{
         std::cout << root->value << ", ";
         traverseInorder(root->right);
     }
+
+    bool search(Node* root, const int& value){
+        if (this->root == nullptr) return false;
+        if (root == nullptr) return false;
+
+        if(root->value == value) return true;
+
+        if(value < root->value) return search(root->left, value);
+        else return search(root->right, value);
+    }
 };
 
 int main(){
@@ -50,5 +60,10 @@ int main(){
     bt.addNode(bt.root, new Node(15));
 
     bt.traverseInorder(bt.root);
+
+    std::cout << "\n\nPerforming searching:\n";
+
+    std::cout << bt.search(bt.root, 2) << "\n";
+    std::cout << bt.search(bt.root, 8) << "\n";
     return 0;
 }
