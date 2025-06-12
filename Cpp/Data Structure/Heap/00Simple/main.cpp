@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 
 const int HEAP_SIZE = 16;
 
@@ -8,7 +7,7 @@ class Heap{
     int size = 0;
     int arr[HEAP_SIZE] = {-1};
 
-    void add(int value){
+    void insert(int value){
         if(size == HEAP_SIZE){
             std::cout << "Max Heap Size reached\n";
             return;
@@ -36,6 +35,38 @@ class Heap{
 
             display();
         }
+
+    }
+
+    void heapifyDown(){
+        int index = 0;
+        while(true){
+            int left = 2*index+1;
+            int right = 2*index+2;
+            int highest = index;
+            if(left<size && arr[left]>arr[highest]) highest = left;
+            if(right<size && arr[right]>arr[highest]) highest = right;
+            
+            if(highest!=index){
+                int temp = arr[index];
+                arr[index] = arr[highest];
+                arr[highest] = temp;
+                index = highest;
+            }
+            else break;
+
+            display();
+        }
+    }
+
+    void extract(){
+        if(size==0) return;
+
+        arr[0] = arr[size-1];
+        size--;
+
+        heapifyDown();
+        std::cout << "\n";
     }
 
     void display(){
@@ -49,11 +80,13 @@ class Heap{
 int main(){
     Heap h = Heap();
 
-    h.add(10);
-    h.add(2);
-    h.add(6);
-    h.add(12);
-    h.add(14);
+    h.insert(10);
+    h.insert(2);
+    h.insert(6);
+    h.insert(12);
+
+    h.extract();
+    h.display();
 
     return 0;
 }
