@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 
 class Node{
     public:
@@ -51,9 +50,9 @@ class BinarySearchTree{
     void preOrder(Node* node){
         if(node == nullptr) return;
 
+        std::cout << node->value << ", ";
         preOrder(node->left);
         preOrder(node->right);
-        std::cout << node->value << ", ";
     }
 
     void postOrder(){
@@ -64,54 +63,49 @@ class BinarySearchTree{
     void postOrder(Node* node){
         if(node == nullptr) return;
 
-        std::cout << node->value << ", ";
         postOrder(node->left);
         postOrder(node->right);
+        std::cout << node->value << ", ";
     }
 
     void levelOrder(){
         std::cout << "Level-Order:\n";
 
         Node* arrRoot[1] = {root};
+        
         levelOrder(1, arrRoot);
 
         std::cout << "\n";
     }
-    void levelOrder(int level, Node* arrParents[]){
-        // for root
-        if(level == 1){
-            Node* node = arrParents[0];
-            if(node == nullptr) return;
 
-            std::cout << node->value << ", ";
+    void levelOrder(int level, Node* arrParents[]){
+        // output the parents
+        int sizeParents = 1 << (level-1);
+        for(int i=0 ; i<sizeParents ; i++){
+            Node* parent = arrParents[i];
+            if (parent) std::cout << parent->value << ", ";
         }
 
-        int sizeChildrens = std::pow(2, level);
-        Node* arrChildren[sizeChildrens] = {nullptr};
-        getNodesAtLevel(arrParents, arrChildren, level);
+        int sizeChildren = 1 << level;
+        Node* arrChildren[sizeChildren] = {nullptr};
 
         bool hasChildren = false;
-        for(int i=0 ; i<sizeChildrens ; i++){
-            if(arrChildren[i] != nullptr){
-                if (!hasChildren) std::cout << "\n";
+        for(int i=0 ; i<sizeParents ; i++){
+            Node* parent = arrParents[i];
+
+            if(parent==nullptr) continue;
+
+            if(parent->left){
                 hasChildren = true;
-                std::cout << arrChildren[i]->value << ", ";
+                arrChildren[i*2] = parent->left;
             };
-        };
-
-        if(hasChildren) levelOrder(level+1, arrChildren);
-    }
-    void getNodesAtLevel(Node* arrParents[], Node* arrChildren[], int level){
-        for(int iParent=0 ; iParent<std::pow(2, level-1) ; iParent++){
-            Node* node = arrParents[iParent];
-
-            if(node == nullptr) continue;
-
-            if(node->left) arrChildren[iParent*2] = node->left;
-            if(node->right) arrChildren[(iParent*2)+1] = node->right;
+            if(parent->right){
+                hasChildren = true;
+                arrChildren[(i*2)+1] = parent->right;
+            };
         }
 
-        return;
+        if(hasChildren) levelOrder(level+1, arrChildren);
     }
 };
 
