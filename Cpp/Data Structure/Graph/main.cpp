@@ -155,8 +155,27 @@ class Graph{
     int size(){ return nodes.size(); }
 };
 
-void testConnectAndDisconnect(Graph& g){
-    std::cout << "---Test 1 starts ---\n";
+void testCreateNodes(Graph& g){
+    std::cout << "---Test Create Nodes (Start)---\n";
+    std::cout << "Creating Nodes:\n";
+
+    g.addNode("Alpha");
+    g.addNode("Bravo");
+    g.addNode("Charlie");
+    g.addNode("Delta");
+    g.addNode("Echo");
+    g.addNode("Fox");
+    g.addNode("Golf");
+    g.addNode("Hotel");
+    g.addNode("India");
+    
+
+    g.listNodes();
+    std::cout << "---Test Create Nodes (End)---\n\n\n";
+}
+
+void testConnect(Graph& g){
+    std::cout << "---Test Connect (Start)---\n";
     std::cout << "Creating relations between nodes:\n";
 
     g.connect(1, 2);
@@ -178,61 +197,65 @@ void testConnectAndDisconnect(Graph& g){
     g.connect(9, 7);
 
     g.listNodes();
+    std::cout << "---Test Connect (End)---\n\n\n";
+}
+
+void testDisconnect(Graph& g){
+    std::cout << "---Test Disconnect (Start)---\n";
     std::cout << "Disconnecting some relations:\n";
     g.disconnect("Alpha");
     
-    
-    std::cout << "---Test 1 ends---\n\n\n";
+    g.listNodes();
+    std::cout << "---Test Disconnect (End)---\n\n\n";
 }
 
 void testSearching(Graph& g){
-    std::cout << "---Test 2 starts ---\n";
-    std::cout << "Testing searching\n";
+    std::cout << "---Test Searching (Start)---\n";
 
     g.findValue("Alpha");
 
-    std::cout << "---Test 2 ends---\n\n\n";
+    g.listNodes();
+    std::cout << "---Test Searching (End)---\n\n\n";
 }
 
 void testDeletion(Graph& g){
-    std::cout << "---Test 3 starts ---\n";
-    std::cout << "Testing Deletion\n";
+    std::cout << "---Test Deletion (Start)---\n";
 
     g.deleteNode(g.findValue("Delta"));
     g.listNodes();
 
     g.deleteNodes();
     g.listNodes();
+    std::cout << "---Test Deletion (End)---\n\n\n";
+}
 
-    std::cout << "---Test 3 ends---\n\n\n";
+void testReset(){
+    std::cout << "\n\n\n---Test Reset (Start)---\n";
+
+    COUNTER_ID = 0;
+    std::cout << "COUNTER_ID was reset to 0\n";
+    
+    std::cout << "---Test Reset (End)---\n\n\n";
 }
 
 int main(){
     Graph g = Graph();
 
-    g.addNode("Alpha");
-    g.addNode("Bravo");
-    g.addNode("Charlie");
-    g.addNode("Delta");
-    g.addNode("Echo");
-    g.addNode("Fox");
-    g.addNode("Golf");
-    g.addNode("Hotel");
-    g.addNode("India");
+    testCreateNodes(g);
 
-    g.listNodes();
+    testConnect(g);
 
-    testConnectAndDisconnect(g);
-
-    g.listNodes();
+    testDisconnect(g);
 
     testSearching(g);
 
-    g.listNodes();
-
     testDeletion(g);
 
-    g.listNodes();
+    // fresh nodes & reseting the ID
+    testReset();
+
+    testCreateNodes(g);
+    testConnect(g);
 
     return 0;
 }
