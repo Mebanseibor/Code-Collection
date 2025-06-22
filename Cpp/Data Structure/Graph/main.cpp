@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 
 int COUNTER_ID = 0;
 
@@ -105,6 +106,21 @@ class Graph{
         std::cout << "Disconnected all nodes from node: " << value << "\n";
     }
 
+    Node* findValue(int id){
+        std::cout << "Attempting to find the node with id: " << id << "\n";
+
+        for(int i=0 ; i<size() ; i++){
+            Node* node = nodes[i];
+            if(node->id == id){
+                std::cout << "Node was found\n";
+                return node;
+            }
+        }
+
+        std::cout << "Node was not found\n";
+        return nullptr;
+    }
+
     Node* findValue(std::string value){
         std::cout << "Attempting to find the node: " << value << "\n";
 
@@ -152,7 +168,66 @@ class Graph{
         std::cout << "Deleted all nodes from the graph\n";
     }
 
+    void breadthFirstSearch(int a, int b){
+        std::cout << "Attempting to perform BFS from " << a << " to " << b << "\n";
+        if(a<0 || b<0){
+            std::cout << "Invalid id's entered\n";
+            return;
+        }
+
+        Node* nodeA = findValue(a);
+        Node* nodeB = findValue(b);
+
+        if(!nodeA) { std::cout << "Cannot find node with value: " << a << "\n"; return; }
+        if(!nodeB) { std::cout << "Cannot find node with value: " << b << "\n"; return; }
+
+        std::queue<Node*> toVisitNodes;
+        toVisitNodes.push(nodeA);
+        std::vector<Node*> visitedNodes;
+        
+        if(bFS(nodeB, toVisitNodes, visitedNodes)) std::cout << "Found a path between " << nodeA->value << " and " << nodeB->value << "\n";
+        else std::cout << "Cannot jound a path between " << nodeA->value << " and " << nodeB->value << "\n";
+        std::cout << "\n\n";
+    }
+
     int size(){ return nodes.size(); }
+
+    private:
+    bool bFS(Node* nodeB, std::queue<Node*>& toVisitNodes, std::vector<Node*>& visitedNodes){
+        while(toVisitNodes.size() != 0){
+            Node* nodeA = toVisitNodes.front();
+            std::cout << "At front: " << nodeA->value << "\n";
+            toVisitNodes.pop();
+            
+            if(!nodeA || !nodeB) return false;
+            if(nodeA == nodeB) return true;
+
+            // checks if the nodeA is already visited
+            bool isAlreadyVisited = false;
+            for(int i=0 ; i<visitedNodes.size() ; i++){
+                if(visitedNodes[i] == nodeA){
+                    std::cout << "Front Already visited\n";
+                    std::cout << "\n";
+                    isAlreadyVisited = true;
+                    break;
+                }
+            }
+            if(isAlreadyVisited) continue;
+
+            std::cout << "This Front Not visited yet\n";
+
+            for(int i=0 ; i<nodeA->adjacentNodes.size() ; i++){
+                Node* node = nodeA->adjacentNodes[i];
+                if(node == nodeB) return true;
+
+                std::cout << "Enqueuing node to visit: " << node->value << "\n";
+                toVisitNodes.push(node);
+            }
+            visitedNodes.push_back(nodeA);
+            std::cout << "\n";
+        }
+        return false;
+    }
 };
 
 void testCreateNodes(Graph& g){
@@ -229,13 +304,37 @@ void testDeletion(Graph& g){
     std::cout << "---Test Deletion (End)---\n\n\n";
 }
 
-void testReset(){
+void testReset(Graph& g){
     std::cout << "\n\n\n---Test Reset (Start)---\n";
 
     COUNTER_ID = 0;
     std::cout << "COUNTER_ID was reset to 0\n";
+
+    g.deleteNodes();
     
     std::cout << "---Test Reset (End)---\n\n\n";
+}
+
+void testBreadthFirstSearch(Graph& g){
+    std::cout << "\n\n\n---Test Breadth First Search (Start)---\n";
+
+    g.breadthFirstSearch(7, 6);
+    g.breadthFirstSearch(9, 4);
+    g.breadthFirstSearch(1, 1);
+    g.breadthFirstSearch(1, 10);
+    g.breadthFirstSearch(10, 11);
+    
+    std::cout << "---Test Breadth First Search (End)---\n\n\n";
+}
+
+void testAddDisconnectedNodes(Graph& g){
+    std::cout << "\n\n\n---Test Add Disconnected Nodes (Start)---\n";
+
+    g.addNode("Juliet");
+    g.addNode("Kilo");
+    g.listNodes();
+
+    std::cout << "---Test Add Disconnected Nodes (End)---\n\n\n";
 }
 
 int main(){
@@ -252,10 +351,20 @@ int main(){
     testDeletion(g);
 
     // fresh nodes & reseting the ID
-    testReset();
+    testReset(g);
 
     testCreateNodes(g);
     testConnect(g);
+    testBreadthFirstSearch(g);
+
+
+    // fresh nodes & reseting the ID
+    testReset(g);
+
+    testCreateNodes(g);
+    testAddDisconnectedNodes(g);
+    testConnect(g);
+    testBreadthFirstSearch(g);
 
     return 0;
 }
